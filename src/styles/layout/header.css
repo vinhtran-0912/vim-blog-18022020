@@ -1,11 +1,11 @@
 @charset "UTF-8";
 .navigation {
   height: 90px;
+  flex-shrink: 0;
   background: #262626;
 }
 
 .brand {
-  position: absolute;
 }
 .brand a,
 .brand a:visited {
@@ -16,6 +16,7 @@
 .nav-container {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
 }
 
 nav {
@@ -43,15 +44,23 @@ nav ul li a:hover,
 nav ul li a:visited:hover {
   background: #2581dc;
   color: #ffffff;
+  
 }
+
+nav ul li:hover .nav-dropdown {
+  display: block;
+}
+
 nav ul li a:not(:only-child):after,
 nav ul li a:visited:not(:only-child):after {
   padding-left: 4px;
   content: ' ▾';
 }
+
 nav ul li ul li {
   min-width: 190px;
 }
+
 nav ul li ul li a {
   padding: 15px;
   line-height: 20px;
@@ -149,4 +158,32 @@ nav ul li ul li a {
 
 .header-logo {
   height: 90px;
+}
+
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: #fff;
 }
