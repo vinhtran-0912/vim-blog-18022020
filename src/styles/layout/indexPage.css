@@ -10,6 +10,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.wrapper {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: stretch;
+  max-width: 68em;
+  margin: 0 auto;
+}
+
 .form-structor {
   background-color: #222;
   border-radius: 15px;
@@ -73,7 +83,6 @@ body {
 }
 .form-structor .signup .form-holder {
   border-radius: 15px;
-  background-color: #fff;
   overflow: hidden;
   margin-top: 50px;
   opacity: 1;
@@ -104,8 +113,7 @@ body {
   border: 0;
   border-radius: 15px;
   display: block;
-  margin: 15px auto;
-  padding: 15px 45px;
+  margin: 25px auto;
   width: 100%;
   font-size: 13px;
   font-weight: bold;
